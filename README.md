@@ -22,8 +22,7 @@ It supports **user authentication** via **JWT tokens**, allowing users to regist
 
 ---
 
-![ToDo API Screenshot](https://b.top4top.io/p_34567i8n71.png)
-
+<img src="https://b.top4top.io/p_34567i8n71.png">
 
 ---
 ## 📂 API Controllers
