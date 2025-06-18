@@ -22,6 +22,61 @@ It supports **user authentication** via **JWT tokens**, allowing users to regist
 
 ---
 
+ToDowithAPI/
+│
+├── APITODO/              → Presentation layer (Web API)
+│   ├── Controllers/      → API Controllers (Auth, Todo, Category)
+│   ├── appsettings.json  → Configuration (JWT, DB, etc.)
+│   └── Program.cs        → App entry and service configuration
+│
+├── BLL/                  → Business Logic Layer
+│   ├── Interface/        → Interfaces for repositories
+│   └── Repositories/     → Repository implementations
+│
+├── DAL/                  → Data Access Layer
+│   ├── Context/          → ApplicationDbContext
+│   ├── Migrations/       → EF Core migrations
+│   └── Model/            → Entities (Todo, Category, ApplicationUser, etc.)
+
+
+
+---
+## 📂 API Controllers
+
+### 🔐 `AuthController.cs`
+
+- Handles user authentication.
+- **Endpoints:**
+  - `POST /api/Auth/register` → Register a new user
+  - `POST /api/Auth/login` → Login and receive JWT token
+
+---
+
+### 🗂️ `CategoryController.cs`
+
+- Manages task categories.
+- **JWT Protected:** ✅ Yes
+- **Endpoints:**
+  - `GET /api/Category` → Get all categories
+  - `POST /api/Category` → Create new category
+  - `PUT /api/Category/{id}` → Update category
+  - `DELETE /api/Category/{id}` → Delete category
+
+---
+
+### ✅ `TodoController.cs`
+
+- Manages todo items.
+- **JWT Protected:** ✅ Yes
+- **Endpoints:**
+  - `GET /api/Todo` → Get all todos
+  - `POST /api/Todo` → Create new todo
+  - `PUT /api/Todo/{id}` → Update todo
+  - `DELETE /api/Todo/{id}` → Delete todo
+
+---
+---
+
 ## 📚 What is JWT?
 
 **JWT (JSON Web Token)** is a compact, URL-safe way to securely transmit information between client and server as a JSON object.  
@@ -52,4 +107,7 @@ JWT helps to build stateless, scalable APIs by avoiding server-side session stor
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/yourusername/todo-api.git
-cd todo-api
+```
+### 2. Dont forget to do (update-migration) to make the project work and dont forget to check json file for database location !!!! 
+
+
